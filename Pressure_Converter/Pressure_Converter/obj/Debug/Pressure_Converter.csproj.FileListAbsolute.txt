@@ -1,0 +1,9 @@
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\bin\Debug\Pressure_Converter.exe.config
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\bin\Debug\Pressure_Converter.exe
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\bin\Debug\Pressure_Converter.pdb
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.csprojResolveAssemblyReference.cache
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.Form1.resources
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.Properties.Resources.resources
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.csproj.GenerateResource.Cache
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.exe
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.pdb
