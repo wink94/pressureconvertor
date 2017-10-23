@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,24 +22,24 @@ namespace Pressure_Converter
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<Pressure_Units> lst = new List<Pressure_Units>();
-            lst.Add(new Pressure_Units("Pascal", 1));
-            lst.Add(new Pressure_Units("atm", 2));
-            lst.Add(new Pressure_Units("mmHg", 3));
-            lst.Add(new Pressure_Units("bar", 4));
-            lst.Add(new Pressure_Units("torr", 5));
-            lst.Add(new Pressure_Units("psi", 6));
-            lst.Add(new Pressure_Units("psf", 7));
+            List<Pressure_Units> lst_units = new List<Pressure_Units>();
+            lst_units.Add(new Pressure_Units("Pascal", 1));
+            lst_units.Add(new Pressure_Units("atm", 2));
+            lst_units.Add(new Pressure_Units("mmHg", 3));
+            lst_units.Add(new Pressure_Units("bar", 4));
+            lst_units.Add(new Pressure_Units("torr", 5));
+            lst_units.Add(new Pressure_Units("psi", 6));
+            lst_units.Add(new Pressure_Units("psf", 7));
 
             cmbEntry.ValueMember = "ID";
             cmbEntry.DisplayMember = "Name";
             BindingSource bs1 = new BindingSource();
-            bs1.DataSource = lst;
+            bs1.DataSource = lst_units;
             cmbEntry.DataSource = bs1;
 
             cmbOut.ValueMember = "ID";
             cmbOut.DisplayMember = "Name";
-            cmbOut.DataSource = lst;
+            cmbOut.DataSource = lst_units;
 
         }
 
@@ -59,6 +60,40 @@ namespace Pressure_Converter
             return pressureTable[from][to] * value;
 
 
+        }
+
+        private string getUnit(int unit)
+        {
+            string val;
+            switch (unit)
+            {
+                case 1:
+                    val="Pa";
+                    break;
+                case 2:
+                    val = "atm";
+                    break;
+                case 3:
+                    val = "mmHg";
+                    break;
+                case 4:
+                    val = "bar";
+                    break;
+                case 5:
+                    val = "torr";
+                    break;
+                case 6:
+                    val = "psi";
+                    break;
+                case 7:
+                    val = "psf";
+                    break;
+                default:
+                    val = null;
+                    break;
+            }
+
+            return val;
         }
 
 
@@ -82,17 +117,43 @@ namespace Pressure_Converter
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            int convertFrom = (int)cmbEntry.SelectedIndex;
-            int convertTo = (int)cmbOut.SelectedIndex;
+            int convertFrom, convertTo;
+            string value,units;
+            double test,answer;
+            //bool testValue;
 
-            string value = txtInput.Text;
-            double test;
-            bool ans=Double.TryParse(value, out test);
+
+            convertFrom = (int)cmbEntry.SelectedIndex;
+            convertTo = (int)cmbOut.SelectedIndex;
+
+            value = txtInput.Text;
+            units = getUnit(convertTo+1);
+
+            //testValue = Double.TryParse(value, out test);
+
             if (!String.IsNullOrEmpty(value) && Double.TryParse(value,out test))
             {
-                lblDisplay.Text=conversion(Convert.ToDouble(value), convertFrom, convertTo).ToString();
+                answer = conversion(Convert.ToDouble(value), convertFrom, convertTo);
+               
+
+                lblDisplay.Text=Math.Round(answer,3).ToString()+" "+units;
+            }
+            else if(Regex.Matches(value, @"[a-zA-Z]").Count > 0)
+            {
+                lblDisplay.Text = "";
+                MessageBox.Show("Enter a valid entry!!");
+            }
+            else
+            {
+                lblDisplay.Text = "";
+                MessageBox.Show("Enter a value!!");
             }
             
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

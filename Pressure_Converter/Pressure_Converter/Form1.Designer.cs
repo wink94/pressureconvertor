@@ -37,105 +37,114 @@
             this.txtInput = new System.Windows.Forms.TextBox();
             this.lblDisplay = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEntry
             // 
             this.lblEntry.AutoSize = true;
-            this.lblEntry.Location = new System.Drawing.Point(103, 65);
+            this.lblEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntry.Location = new System.Drawing.Point(23, 65);
             this.lblEntry.Name = "lblEntry";
-            this.lblEntry.Size = new System.Drawing.Size(53, 13);
+            this.lblEntry.Size = new System.Drawing.Size(116, 25);
             this.lblEntry.TabIndex = 0;
             this.lblEntry.Text = "Entry Unit";
             // 
             // lblOut
             // 
             this.lblOut.AutoSize = true;
-            this.lblOut.Location = new System.Drawing.Point(345, 65);
+            this.lblOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOut.Location = new System.Drawing.Point(350, 65);
             this.lblOut.Name = "lblOut";
-            this.lblOut.Size = new System.Drawing.Size(61, 13);
+            this.lblOut.Size = new System.Drawing.Size(131, 25);
             this.lblOut.TabIndex = 1;
             this.lblOut.Text = "Output Unit";
             // 
             // lblVal
             // 
             this.lblVal.AutoSize = true;
-            this.lblVal.Location = new System.Drawing.Point(103, 151);
+            this.lblVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVal.Location = new System.Drawing.Point(23, 143);
             this.lblVal.Name = "lblVal";
-            this.lblVal.Size = new System.Drawing.Size(62, 13);
+            this.lblVal.Size = new System.Drawing.Size(135, 25);
             this.lblVal.TabIndex = 2;
             this.lblVal.Text = "Enter Value";
             // 
             // lblOutputAnswer
             // 
             this.lblOutputAnswer.AutoSize = true;
-            this.lblOutputAnswer.Location = new System.Drawing.Point(103, 208);
+            this.lblOutputAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputAnswer.Location = new System.Drawing.Point(23, 234);
             this.lblOutputAnswer.Name = "lblOutputAnswer";
-            this.lblOutputAnswer.Size = new System.Drawing.Size(39, 13);
+            this.lblOutputAnswer.Size = new System.Drawing.Size(82, 25);
             this.lblOutputAnswer.TabIndex = 3;
             this.lblOutputAnswer.Text = "Output";
             // 
             // cmbEntry
             // 
+            this.cmbEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEntry.FormattingEnabled = true;
-            this.cmbEntry.Items.AddRange(new object[] {
-            "Pascal",
-            "atm",
-            "mmHg",
-            "bar",
-            "torr",
-            "psi"});
-            this.cmbEntry.Location = new System.Drawing.Point(185, 65);
+            this.cmbEntry.Location = new System.Drawing.Point(166, 62);
             this.cmbEntry.Name = "cmbEntry";
-            this.cmbEntry.Size = new System.Drawing.Size(121, 21);
+            this.cmbEntry.Size = new System.Drawing.Size(173, 28);
             this.cmbEntry.TabIndex = 4;
             // 
             // cmbOut
             // 
+            this.cmbOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOut.FormattingEnabled = true;
-            this.cmbOut.Items.AddRange(new object[] {
-            "Pascal",
-            "atm",
-            "mmHg",
-            "bar",
-            "torr",
-            "psi"});
-            this.cmbOut.Location = new System.Drawing.Point(436, 62);
+            this.cmbOut.Location = new System.Drawing.Point(487, 62);
             this.cmbOut.Name = "cmbOut";
-            this.cmbOut.Size = new System.Drawing.Size(121, 21);
+            this.cmbOut.Size = new System.Drawing.Size(155, 28);
             this.cmbOut.TabIndex = 5;
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(185, 143);
+            this.txtInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput.Location = new System.Drawing.Point(166, 142);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(100, 20);
+            this.txtInput.Size = new System.Drawing.Size(154, 26);
             this.txtInput.TabIndex = 6;
             // 
             // lblDisplay
             // 
             this.lblDisplay.AutoSize = true;
-            this.lblDisplay.Location = new System.Drawing.Point(182, 208);
+            this.lblDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplay.Location = new System.Drawing.Point(161, 234);
             this.lblDisplay.Name = "lblDisplay";
-            this.lblDisplay.Size = new System.Drawing.Size(35, 13);
+            this.lblDisplay.Size = new System.Drawing.Size(79, 29);
             this.lblDisplay.TabIndex = 7;
-            this.lblDisplay.Text = "label5";
+            this.lblDisplay.Text = "Value";
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(402, 240);
+            this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvert.Location = new System.Drawing.Point(487, 163);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(75, 23);
+            this.btnConvert.Size = new System.Drawing.Size(111, 57);
             this.btnConvert.TabIndex = 8;
             this.btnConvert.Text = "Convert";
             this.btnConvert.UseVisualStyleBackColor = true;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(487, 279);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(111, 39);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 306);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(649, 339);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.lblDisplay);
             this.Controls.Add(this.txtInput);
@@ -164,6 +173,7 @@
         private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.Label lblDisplay;
         private System.Windows.Forms.Button btnConvert;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
