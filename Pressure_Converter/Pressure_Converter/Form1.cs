@@ -22,7 +22,7 @@ namespace Pressure_Converter
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<Pressure_Units> lst_units = new List<Pressure_Units>();
+            List<Pressure_Units> lst_units = new List<Pressure_Units>();        /*List dataset is linked to comboboxes*/
             lst_units.Add(new Pressure_Units("Pascal", 1));
             lst_units.Add(new Pressure_Units("atm", 2));
             lst_units.Add(new Pressure_Units("mmHg", 3));
@@ -41,10 +41,13 @@ namespace Pressure_Converter
             cmbOut.DisplayMember = "Name";
             cmbOut.DataSource = lst_units;
 
+            cmbAccuracy.SelectedIndex = 0;
+
         }
 
         private double conversion(double value,int from,int to)
         {
+            //Unit conversion array
 
             double[][] pressureTable = {
                 new double[] {1, 0.00000986923266716 ,0.007500616827042 ,0.00001 ,0.007500616827042 ,0.0001450378911491,0.02088545632547  },
@@ -64,7 +67,7 @@ namespace Pressure_Converter
 
         private string getUnit(int unit)
         {
-            string val;
+            string val;        /*unit attaching by considering output*/
             switch (unit)
             {
                 case 1:
@@ -100,6 +103,9 @@ namespace Pressure_Converter
 
         private class Pressure_Units
         {
+
+            //Pressure unit with relevant selection id
+
             public string Name { get; set; }
             public int ID { get; set; }
 
@@ -117,7 +123,7 @@ namespace Pressure_Converter
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            int convertFrom, convertTo;
+            int convertFrom, convertTo, accuracyInput;
             string value,units;
             double test,answer;
             //bool testValue;
@@ -127,26 +133,29 @@ namespace Pressure_Converter
             convertTo = (int)cmbOut.SelectedIndex;
 
             value = txtInput.Text;
+            accuracyInput = cmbAccuracy.SelectedIndex;
             units = getUnit(convertTo+1);
 
             //testValue = Double.TryParse(value, out test);
 
-            if (!String.IsNullOrEmpty(value) && Double.TryParse(value,out test))
+            
+
+            if (!String.IsNullOrEmpty(value) && Double.TryParse(value,out test) )  /*check input is empty or a double variable*/
             {
                 answer = conversion(Convert.ToDouble(value), convertFrom, convertTo);
                
 
-                lblDisplay.Text=Math.Round(answer,3).ToString()+" "+units;
+                lblDisplay.Text=Math.Round(answer, accuracyInput).ToString()+" "+units;
             }
-            else if(Regex.Matches(value, @"[a-zA-Z]").Count > 0)
+            else if(Regex.Matches(value, @"[a-zA-Z]").Count > 0)           /*check alphabaetical charaters in input*/
             {
                 lblDisplay.Text = "";
-                MessageBox.Show("Enter a valid entry!!");
+                MessageBox.Show("Enter a valid entry!!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
                 lblDisplay.Text = "";
-                MessageBox.Show("Enter a value!!");
+                MessageBox.Show("Enter a value!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -154,6 +163,13 @@ namespace Pressure_Converter
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            lblDisplay.Text = "";
+            txtInput.Clear();
+            cmbAccuracy.SelectedIndex = 0;
         }
     }
 }

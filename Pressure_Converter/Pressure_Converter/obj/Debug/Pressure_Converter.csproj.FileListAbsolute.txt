@@ -7,3 +7,5 @@ F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debu
 F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.csproj.GenerateResource.Cache
 F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.exe
 F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\obj\Debug\Pressure_Converter.pdb
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\bin\Debug\System.Net.Http.dll
+F:\Projects\c#\Pressure Converter\Pressure_Converter\Pressure_Converter\bin\Debug\System.Net.Http.xml
